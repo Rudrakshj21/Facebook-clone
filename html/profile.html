@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/profile.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body style="overflow-x: hidden; background-color: #f0f2f5">
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="width: 100vw">
+      <div
+        class="container-fluid py-2"
+        style="
+          box-shadow: 2px 2px 2px rgba(239, 108, 108, 0.1);
+          background-color: white;
+        "
+      >
+        <!-- face book logo -->
+        <img
+          class="facebook-logo navbar-brand ms-5"
+          style="width: 40xp; height: 40px; object-fit: contain"
+          src="../img/facebook logo.png"
+        />
+        <input
+          type="search"
+          class="form-control ms-2 me-5"
+          placeholder="Search..."
+          style="width: 300px; border-radius: 100px"
+        />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="nav-center ms-5 me-5">
+            <ul
+              class="navbar-nav ms-5 px-5 align-items-center"
+              style="display: flex; gap: 80px"
+            >
+              <li class="nav-item">
+                <i class="bi bi-house-door-fill text-primary fs-3"></i>
+              </li>
+              <li class="nav-item">
+                <i class="bi bi-people-fill fs-3 text-secondary"></i>
+              </li>
+              <li class="nav-item">
+                <i class="bi bi-play-btn-fill fs-3 text-secondary"></i>
+              </li>
+              <li class="nav-item">
+                <i class="bi bi-shop fs-3 text-secondary"></i>
+              </li>
+              <li class="nav-item">
+                <i class="bi bi-person-fill fs-3 text-secondary"></i>
+              </li>
+            </ul>
+          </div>
+          <div class="nav-right ms-5">
+            <ul
+              class="navbar-nav"
+              style="
+                display: flex;
+                gap: 30px;
+                align-items: center;
+                margin-left: 100px;
+                justify-content: center;
+              "
+            >
+              <li class="nav-item">
+                <i class="bi bi-gear fs-3 text-secondary"></i>
+              </li>
+              <li class="nav-item">
+                <i class="bi bi-chat-dots fs-3 text-secondary"></i>
+              </li>
+              <li class="nav-item">
+                <i class="bi bi-bell-fill fs-3 text-secondary"></i>
+              </li>
+              <li class="nav-item">
+                <!-- log out button -->
+                <button
+                  class="btn btn-danger mt-2 me-5"
+                  id="logoutButton"
+                  data-bs-toggle="modal"
+                  data-bs-target="#logoutModal"
+                  style="border-radius: 30px"
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- logout modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog w-25">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 text-warning" id="logoutModalLabel">
+              Do you want to logout?
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">Click Yes to Logout</div>
+          <div class="modal-footer d-flex justify-content-start">
+            <button type="button" class="btn btn-danger" id="confirmLogout">
+              Yes
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              No
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row" style="padding-left: 90px">
+        <!-- left section containing side bar -->
+        <div class="col-3">
+          <div class="container" style="margin-left: 50px">
+            <nav class="navbar navbar-expand-lg sidebar" style="width: 4vw">
+              <div class="container-fluid d-flex flex-column align-items-end">
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#sidebarSupportedContent"
+                  aria-controls="sidebarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                  class="collapse navbar-collapse"
+                  id="sidebarSupportedContent"
+                >
+                  <div class="mt-4">
+                    <div class="px-5">
+                      <img
+                        class="ms-1"
+                        id="userProfilePicture"
+                        style="width: 100px; height: 80px; border-radius: 50%"
+                      />
+                    </div>
+
+                    <ul
+                      class="navbar-nav flex-column px-5 mt-5"
+                      id="sidebar-items-content"
+                      style="display: flex; gap: 30px"
+                    >
+                      <!-- user profile picture -->
+
+                      <li class="nav-item">
+                        <div class="d-flex align-items-center gap-4">
+                          <i class="bi bi-controller fs-3"></i>
+                          <span class="fw-bold">Gaming </span>
+                        </div>
+                      </li>
+
+                      <li class="nav-item">
+                        <div class="d-flex align-items-center gap-4">
+                          <i class="bi bi-alarm fs-3"></i>
+                          <span class="fw-bold">Memories</span>
+                        </div>
+                      </li>
+
+                      <li class="nav-item">
+                        <div class="d-flex align-items-center gap-4">
+                          <i
+                            class="fa-solid fa-globe fs-3"
+                            style="color: #1ee635"
+                          ></i>
+                          <span class="fw-bold">Fundraiser</span>
+                        </div>
+                      </li>
+
+                      <li class="nav-item">
+                        <div class="d-flex align-items-center gap-4">
+                          <i class="bi bi-people-fill fs-3"></i>
+                          <span class="fw-bold">Find Friends</span>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <div class="d-flex align-items-center gap-4">
+                          <i
+                            class="bi bi-play-btn-fill fs-3"
+                            style="color: red"
+                          ></i>
+                          <span class="fw-bold">Video</span>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <div class="d-flex align-items-center gap-4">
+                          <i class="bi bi-bar-chart fs-3"></i>
+                          <span class="fw-bold">Ads</span>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <div class="d-flex align-items-center gap-4">
+                          <i class="fa-solid fa-earth-americas fs-3"></i>
+                          <span class="fw-bold">Climate </span>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <div class="d-flex align-items-center gap-4">
+                          <i class="bi bi-gear-wide fs-3 text-primary"></i>
+                          <span class="fw-bold">Memories</span>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <div
+                          class="d-flex align-items-center gap-4 text-warning"
+                        >
+                          <i class="bi bi-bookmark fs-3"></i>
+                          <span class="fw-bold">Saved</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <!-- center section containing posts -->
+        <div class="col-6 me-5">
+          <div class="container-fluid">
+            <!-- create story row -->
+            <div class="row">
+              <div
+                class="col text-white d-flex align-items-center justify-content-start rounded gap-4 bg-white"
+                style="box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1); height: 80px"
+              >
+                <div>
+                  <button
+                    class="bg rounded-circle"
+                    style="
+                      border: none;
+                      background-color: #ebf5ff;
+                      cursor: pointer;
+                    "
+                  >
+                    <div class="mb-1">
+                      <i class="bi bi-plus text-primary fs-3"></i>
+                    </div>
+                  </button>
+                </div>
+                <!-- user add story container -->
+                <div>
+                  <div class="text-black fs-5 fw-bold">Create Story</div>
+                  <div class="text-primary">
+                    Share a photo or write something
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- whats on your mind post row  -->
+            <div class="row">
+              <div
+                class="col mt-5 py-4 rounded"
+                style="
+                  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+                  background-color: white;
+                "
+              >
+                <div class="row d-flex mb-4 align-items-center">
+                  <!-- image container -->
+                  <div class="col-2">
+                    <img
+                      src="../img/facebook logo.png"
+                      style="height: 40px; width: 40px"
+                      alt=""
+                      class="ms-5"
+                    />
+                  </div>
+                  <!-- input container -->
+                  <div class="col">
+                    <!-- create post button -->
+                    <button
+                      class="btn col-12 rounded-pill text-start py-2 ps-3 text-secondary"
+                      id="createPostButton"
+                      data-bs-toggle="modal"
+                      data-bs-target="#postmodal"
+                      style="background-color: #f0f2f5"
+                    >
+                      Whats on your mind?
+                    </button>
+                  </div>
+                </div>
+                <hr />
+                <!-- row for photo video  icons -->
+                <div
+                  class="row ps-2 mt-4 d-flex"
+                  style="font-family: cursive"
+                  id="row-live-video-activity-icons"
+                >
+                  <div class="col-4">
+                    <button class="d-flex align-items-center gap-2 btn">
+                      <span
+                        ><i
+                          class="fa-solid fa-video fs-4"
+                          style="color: #e02f10"
+                        ></i
+                      ></span>
+                      <span>Live/Video</span>
+                    </button>
+                  </div>
+                  <div class="col-4">
+                    <button class="d-flex align-items-center gap-2 btn">
+                      <span
+                        ><i
+                          class="fa-solid fa-photo-film fs-4"
+                          style="color: #1ee635"
+                        ></i
+                      ></span>
+                      <span>Photo/Video</span>
+                    </button>
+                  </div>
+                  <div class="col">
+                    <button class="d-flex align-items-center gap-2 btn">
+                      <span
+                        ><i
+                          class="fa-regular fa-face-smile fs-4"
+                          style="color: #e9e216"
+                        ></i
+                      ></span>
+                      <span>Feeling/Activity</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- post row -->
+            <div class="row">
+              <div class="col mt-5" id="postBody">
+                <!-- a single post -->
+                <!-- <div class="card px-2" style="width: 45vw; margin-left: -10px">
+                  <div class="card-body">
+                    <h5 class="card-title d-flex gap-3">
+                      
+                      <img
+                        src="../img/post2.avif"
+                        alt=""
+                        style="width: 40px; height: 40px; border-radius: 50%"
+                      />
+                      <div class="d-flex flex-column">
+                        <span>Rudraksh </span>
+                        
+                        <div
+                          class="fs-6 text-secondary d-flex align-items-center"
+                        >
+                          Posted by You &#183;<span class="ms-1">time</span
+                          ><span class="ms-1 fs-5">&#183;</span>
+                          <span
+                            ><i class="ms-1 fa-solid fa-earth-americas fs-6"></i
+                          ></span>
+                        </div>
+                      </div>
+                    </h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                  </div>
+                
+                  <img src="../img/post1.avif" class="card-img" alt="..." />
+                
+
+                  <div class="card-body" style="margin-top: -12px">
+                    
+                    <div
+                      class="row d-flex justify-content-between align-items-center"
+                    >
+                      <div
+                        class="col-12 d-flex justify-content-between align-items-center"
+                      >
+                        <div>
+                          <div class="d-flex align-items-center mt-3">
+                            <img
+                              src="../img/like.svg"
+                              alt=""
+                              style="margin-right: -5px; z-index: 100"
+                            />
+                            <img src="../img/heart.svg" alt="" />
+                            <span>42k</span>
+                          </div>
+                        </div>
+                        <div>
+                          <span class="text-secondary">220 comments</span
+                          ><span class="ms-2 text-secondary">1.7k shares</span>
+                        </div>
+                      </div>
+                                           <div class="px-3">
+                        <hr class="mt-2" id="divider" />
+                      </div>
+                    
+                      <div class="col">
+                        <div
+                          class="row d-flex justify-content-around"
+                          id="row-like-comment-share"
+                        >
+                          <button class="btn text-white col-3">
+                            <span
+                              ><i
+                                class="fa-regular fa-thumbs-up ms-2 me-2 fs-5 text-secondary"
+                              ></i
+                            ></span>
+                            <span class="ms-1 text-secondary fw-bold"
+                              >Like</span
+                            >
+                          </button>
+                          <button class="btn text-white col-3">
+                            <span
+                              ><i
+                                class="fa-regular fa-comments text-secondary"
+                              ></i
+                            ></span>
+                            <span class="ms-1 text-secondary fw-bold"
+                              >Comment</span
+                            >
+                          </button>
+                          <button class="btn text-white col-3">
+                            <span
+                              ><i class="text-secondary fa-solid fa-share"></i
+                            ></span>
+                            <span class="ms-1 text-secondary fw-bold"
+                              >Share</span
+                            >
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>  -->
+                <!-- a single post end -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- right section filler -->
+        <div class="col">
+          <div class="row" id="newsRow">
+            <!-- heading trending -->
+            <div class="display-4 fw-bold" style="font-family: 'cursive'">
+              Trending
+            </div>
+            <!-- a single news feed -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- user profile  trigger modal -->
+    <!-- Modal  -->
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              Welcome to facebook
+            </h1>
+          </div>
+          <div class="modal-body">
+            <p>
+              "Hello there! 😊 Welcome to Facebook! We're thrilled to have you
+              on board. How about adding a splash of your personality to your
+              profile by uploading a fantastic profile picture? It's a great way
+              for friends to recognize you and share in your experiences. Ready
+              to make your profile shine? 🌟
+            </p>
+            <!-- insert profile pic -->
+            <input type="file" id="profilePictureFile" accept="image/*" />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary disabled closeButton"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary" id="uploadPictureBtn">
+              Upload profile picture
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- user post  trigger modal -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="postmodal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="postmodallabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="postmodallabel">Create Post</h1>
+          </div>
+          <div class="modal-body">
+            <!-- post user name  and image container-->
+            <div class="d-flex gap-2 align-items-center">
+              <img
+                src="../img/heart.svg"
+                style="width: 40px; height: 40px; border-radius: 50%"
+                alt=""
+              />
+              <span id="post-username"></span>
+            </div>
+            <!-- post content -->
+            <textarea
+              name="postContent"
+              id="postContent"
+              cols="60"
+              rows="10"
+              class="form-control my-4"
+              placeholder="Whats on your mind?"
+            ></textarea>
+            <span id="contentError" class="fs-3 text-warning"
+              >Please write something...😓</span
+            >
+            <!-- post image -->
+            <div class="d-flex">
+              <div class="mb-3">
+                <label for="formFile" class="form-label text-success fs-3 ms-2"
+                  >Add Image to post</label
+                >
+                <input class="form-control" type="file" id="postImage" />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="publishPostButton"
+            >
+              Publish
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- boostrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- swal -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/profile.js" type="module"></script>
+    <script src="../js/news.js"></script>
+  </body>
+</html>

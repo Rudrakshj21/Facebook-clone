@@ -1,0 +1,22 @@
+nav {
+  font-family: Helvetica, sans-serif;
+}
+
+#row-live-video-activity-icons button,
+#sidebar-items-content .nav-item,
+#row-like-comment-share button {
+  transition: background-color 0.8s;
+}
+
+#row-live-video-activity-icons button:hover {
+  background-color: rgb(240, 237, 235);
+}
+
+#sidebar-items-content .nav-item:hover {
+  background-color: rgb(192, 188, 186);
+  cursor: pointer;
+}
+
+#row-like-comment-share button:hover {
+  background-color: #d1d3d5;
+}
