@@ -16,10 +16,6 @@ if (empty($url) || empty($token)) {
     response("something went wrong....");
 }
 
-
-
-
-
 try {
 
     $pdo = generatePDO();

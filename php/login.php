@@ -9,6 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 
 $email = $_POST['email'];
 $retrieved_password = $_POST['password'];
+if (empty($email) || empty($retrieved_password)) {
+    response(
+        'one or more fields is empty'
+    );
+}
 $retrieved_password = md5($retrieved_password);
 
 

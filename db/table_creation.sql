@@ -15,13 +15,13 @@ CREATE Table
         PRIMARY KEY (id)
     );
 
-TRUNCATE table users;
+-- TRUNCATE table users;
 
-SELECT * FROM users;
+-- SELECT * FROM users;
 
 -- select profile_pic_url from users where profile_pic_url is not null;
 
-drop table users;
+-- drop table users;
 
 CREATE Table
     posts(
@@ -54,6 +54,6 @@ CREATE Table
 
 -- where users.id = 1;
 
-SELECT * FROM posts;
+-- SELECT * FROM posts;
 
-drop Table posts;
+-- drop Table posts;

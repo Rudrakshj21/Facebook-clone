@@ -16,6 +16,6 @@ function generatePDO()
     } catch (Exception $e) {
         echo "database connection failed ❌ ";
         echo $e->getMessage();
-        return false;
+        response('cannot generate PDO');
     }
 }

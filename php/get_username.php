@@ -13,7 +13,7 @@ $token = $headers['token'];
 try {
 
     $pdo = generatePDO();
-    $query = $pdo->prepare("SELECT CONCAT(first_name,' ',last_name) AS full_name FROM users WHERE  token = :token");
+    $query = $pdo->prepare("SELECT (CONCATfirst_name,' ',last_name) AS full_name FROM users WHERE  token = :token");
     $query->bindParam('token', $token);
     $query->execute();
 
@@ -24,7 +24,6 @@ try {
     } else {
         // resource not found response code
         response("not found user name ", false);
-        http_response_code(404);
     }
 } catch (Exception $e) {
     response("db error", false, $e->getMessage());
